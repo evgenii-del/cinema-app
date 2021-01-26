@@ -11,15 +11,16 @@ body {
 }
 
 .wrapper {
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* MAIN */
 .main {
     display: flex;
     width: 100%;
-    height: 800px;
+    height: 90vh;
     margin: 30px auto;
     border-radius: 10px;
     background-color: #030303;
@@ -88,7 +89,7 @@ body {
     content: "";
     bottom: -15px;
     left: 0;
-    width: 100%;
+    width: 50%;
     height: 2px;
     background-color: #FFFFFF;
 }
@@ -105,14 +106,22 @@ body {
 }
 
 /* MONTHS */
-
-.months {
+.months,
+.time {
     width: 100%;
-    padding: 0 30px 20px 30px;
     border-bottom: 1px solid #FFFFFF;
 }
 
-.months__title {
+.months {
+    padding: 0 30px 20px 30px;
+}
+
+.time {
+    padding: 20px 30px;
+}
+
+.months__title,
+.time__title {
     margin-bottom: 25px;
     text-align: center;
     color: #FFFFFF;
@@ -125,30 +134,42 @@ body {
 }
 
 .months__list {
+    padding: 0 30px;
+}
+
+.months__list,
+.time__list {
     display: flex;
     justify-content: space-between;
-    padding: 0 30px;
     width: 100%;
     color: #FFFFFF;
 }
 
-.months__list-item {
+.months__list-item,
+.time__list-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    padding: 2.5px 15px;
     border-bottom: 1px solid #030303;
-
 }
 
-.months__list-item.active {
+.months__list-item {
+    padding: 2px 15px;
+}
+
+.time__list-item {
+    padding: 5px 0;
+}
+
+.months__list-item.active,
+.time__list-item.active {
     border-bottom: 1px solid red;
     color: red;
 }
 
 .months__list-day-of-week {
-    font-size: .5em;
+    font-size: .75em;
     text-transform: uppercase;
     margin-bottom: 5px;
 }
@@ -175,7 +196,21 @@ body {
     transform: rotate(-90deg);
 }
 
+.time__list-choice {
+    font-size: 1.5em;
+}
+
+.time__list-type {
+    font-size: .75em;
+}
+
 /*!* SCREEN *!*/
+/*.cinema {*/
+/*    max-width: 500px;*/
+/*    margin: 0 auto;*/
+/*    padding: 20px 30px;*/
+/*}*/
+
 /*.cinema .cinema__screen {*/
 /*    display: flex;*/
 /*    flex-direction: column-reverse;*/
@@ -186,19 +221,18 @@ body {
 /*}*/
 
 /*.cinema .cinema__screen-title {*/
-/*    margin: 30px auto 0 auto;*/
-/*    color: #000000;*/
+/*    margin: 5px 0 30px 0;*/
+/*    color: #FFFFFF;*/
+/*    text-align: center;*/
 /*}*/
 
 /*!* HALL *!*/
 /*.cinema .cinema__hall {*/
 /*    display: grid;*/
-/*    grid-template-columns: repeat(13, 1fr);*/
-/*    grid-template-rows: repeat(5, 1fr);*/
+/*    grid-template-columns: repeat(16, 1fr);*/
+/*    grid-template-rows: repeat(11, 1fr);*/
 /*    grid-column-gap: .5em;*/
-/*    grid-row-gap: 1em;*/
-/*    max-width: 500px;*/
-/*    margin: 60px auto;*/
+/*    grid-row-gap: .5em;*/
 /*}*/
 
 /*.cinema .seat-checkbox {*/
@@ -206,8 +240,8 @@ body {
 /*}*/
 
 /*.cinema .seat-checkbox:checked + .seat {*/
-/*    border: 1px solid #FFCD24;*/
-/*    background-color: #FFCD24;*/
+/*    border: 1px solid red;*/
+/*    background-color: red;*/
 /*}*/
 
 /*.cinema .seat {*/
@@ -215,8 +249,8 @@ body {
 /*    height: 1em;*/
 /*    width: 1em;*/
 /*    border-radius: 50%;*/
-/*    border: 1px solid #72D9EA;*/
-/*    background-color: #72D9EA;*/
+/*    border: 1px solid #FFFFFF;*/
+/*    background-color: #FFFFFF;*/
 /*}*/
 
 /*.cinema .seat:hover {*/
@@ -241,36 +275,44 @@ body {
 /*    background-color: #90a4ae;*/
 /*}*/
 
-/*!* PRICE *!*/
-/*.cinema__price {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*    margin: 0 auto;*/
-/*    max-width: 175px;*/
+/*!*!* PRICE *!*!*/
+/*!*.cinema__price {*!*/
+/*!*    display: flex;*!*/
+/*!*    justify-content: space-between;*!*/
+/*!*    align-items: center;*!*/
+/*!*    margin: 0 auto;*!*/
+/*!*    max-width: 175px;*!*/
+/*!*}*!*/
+
+/*!*.cinema__price .cinema__price-standard,*!*/
+/*!*.cinema__price .cinema__price-vip {*!*/
+/*!*    display: flex;*!*/
+/*!*    justify-content: space-between;*!*/
+/*!*    align-items: center;*!*/
+/*!*}*!*/
+
+/*!*.cinema__price span {*!*/
+/*!*    padding-left: 10px;*!*/
+/*!*}*!*/
+
+/*!*.cinema__price .cinema__price-standard div {*!*/
+/*!*    width: 10px;*!*/
+/*!*    height: 10px;*!*/
+/*!*    background-color: #72D9EA;*!*/
+/*!*    border-radius: 5px;*!*/
+/*!*}*!*/
+
+/*!*.cinema__price .cinema__price-vip div {*!*/
+/*!*    width: 10px;*!*/
+/*!*    height: 10px;*!*/
+/*!*    background-color: #F64C72;*!*/
+/*!*    border-radius: 5px;*!*/
+/*!*}*!*/
+
+/*.seat-1 {*/
+/*    grid-column: 3/4;*/
 /*}*/
 
-/*.cinema__price .cinema__price-standard,*/
-/*.cinema__price .cinema__price-vip {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.cinema__price span {*/
-/*    padding-left: 10px;*/
-/*}*/
-
-/*.cinema__price .cinema__price-standard div {*/
-/*    width: 10px;*/
-/*    height: 10px;*/
-/*    background-color: #72D9EA;*/
-/*    border-radius: 5px;*/
-/*}*/
-
-/*.cinema__price .cinema__price-vip div {*/
-/*    width: 10px;*/
-/*    height: 10px;*/
-/*    background-color: #F64C72;*/
-/*    border-radius: 5px;*/
+/*.seat-2 {*/
+/*    grid-column: 5/6;*/
 /*}*/
