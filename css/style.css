@@ -5,6 +5,7 @@
     list-style: none;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
+    color: #E3E3E3;
 }
 
 body {
@@ -17,17 +18,17 @@ body {
     padding: 0 20px;
 }
 
-.main {
+.app {
     display: flex;
     width: 100%;
     height: 90vh;
     margin: 30px auto;
     border-radius: 10px;
     background-color: #030303;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.13);
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.75);
 }
 
-.main .main__left {
+.app .aside {
     max-width: calc(100% / 7 * 3);
     width: 100%;
     height: 100%;
@@ -35,33 +36,33 @@ body {
     border-radius: 10px 0 0 10px;
 }
 
-.main__left .main__left-inner {
+.aside .aside__inner {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 50px;
     height: 100%;
-    color: #FFFFFF;
+    color: #E3E3E3;
 }
 
-.main__left .main__left-info {
+.aside .aside-info {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.main__left .main__left-clock {
+.aside .aside-clock {
     margin-bottom: 7px;
 }
 
-.main__left .main__left-clock,
-.main__left .main__left-heart {
+.aside .aside-clock,
+.aside .aside-heart {
     position: relative;
     padding-right: 25px;
 }
 
-.main__left .main__left-clock::after,
-.main__left .main__left-heart::after {
+.aside .aside-clock::after,
+.aside .aside-heart::after {
     position: absolute;
     top: 2px;
     right: 0;
@@ -70,36 +71,36 @@ body {
     height: 1rem;
 }
 
-.main__left .main__left-clock::after {
+.aside .aside-clock::after {
     background-image: url("../images/clock.svg");
 }
 
-.main__left .main__left-heart::after {
+.aside .aside-heart::after {
     background-image: url("../images/heart.svg");
 }
 
-.main__left .main__left-title {
+.aside .aside-title {
     position: relative;
     margin-bottom: 30px;
 }
 
-.main__left .main__left-title:after {
+.aside .aside-title:after {
     position: absolute;
     content: "";
     bottom: -15px;
     left: 0;
     width: 50%;
     height: 2px;
-    background-color: #FFFFFF;
+    background-color: #E3E3E3;
 }
 
-.main__right {
+.main {
     max-width: calc(100% / 7 * 4);
     width: 100%;
     height: 100%;
 }
 
-.main__right .main__right-inner {
+.main .main__inner {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -108,25 +109,26 @@ body {
 }
 
 
-.main__right .months,
-.main__right .time {
+.main .months,
+.main .time {
     width: 100%;
-    border-bottom: 1px solid #FFFFFF;
+    border-bottom: 1px solid #E3E3E3;
 }
 
-.main__right .months {
+.main .months {
     padding: 0 30px 20px 30px;
 }
 
-.main__right .time {
+.main .time {
     padding: 20px 30px;
 }
 
 .months .months__title,
-.time__title {
+.time .time__title {
     margin-bottom: 25px;
     text-align: center;
-    color: #FFFFFF;
+    color: #E3E3E3;
+    font-weight: 400;
 }
 
 .months .months__slider {
@@ -144,7 +146,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    color: #FFFFFF;
+    color: #E3E3E3;
 }
 
 .months .months__list-item,
@@ -157,17 +159,40 @@ body {
 }
 
 .months .months__list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 2px 15px;
+}
+
+.months__list .months__list-item:nth-child(2n),
+.months__list .months__list-item:last-child {
+    transform: scale(.9);
+}
+
+.months__list .months__list-item:first-child,
+.months__list .months__list-item:last-child {
+    transform: scale(.8);
 }
 
 .time .time__list-item {
     padding: 5px 0;
 }
 
-.months .months__list-item.active,
-.time__list-item.active {
-    border-bottom: 1px solid red;
-    color: red;
+.months .months__list-item.months__list-item_active > *,
+.time__list-item.time__list-item_active > * {
+    color: #DE1B1B;
+}
+
+.months .months__list-item:hover > *,
+.time .time__list-item:hover > * {
+    color: #FF7979;
+}
+
+.months .months__list-item.months__list-item_active,
+.time__list-item.time__list-item_active {
+    border-bottom: 1px solid #DE1B1B;
+    pointer-events: none;
 }
 
 .months .months__list-day-of-week {
@@ -180,21 +205,21 @@ body {
     font-size: 2rem;
 }
 
-.months .months__btn {
+.months .months__control {
     cursor: pointer;
     width: 1rem;
     height: 1rem;
 }
 
-.months .months__btn img {
+.months .months__control-img {
     width: 100%;
 }
 
-.months .months__btn.left {
+.months .months__control.left {
     transform: rotate(90deg);
 }
 
-.months .months__btn.right {
+.months .months__control.right {
     transform: rotate(-90deg);
 }
 
@@ -223,7 +248,7 @@ body {
 
 .cinema .cinema__screen-title {
     margin: 5px 0 30px 0;
-    color: #FFFFFF;
+    color: #E3E3E3;
     text-align: center;
 }
 
@@ -240,8 +265,14 @@ body {
 }
 
 .cinema .seat-checkbox:checked + .seat {
-    border: 1px solid red;
-    background-color: red;
+    border: 1px solid #DE1B1B;
+    background-color: #DE1B1B;
+}
+
+.cinema .seat-checkbox:disabled + .seat {
+    pointer-events: none;
+    border: 1px solid #646F6F;
+    background-color: #646F6F;
 }
 
 .cinema .seat {
@@ -312,27 +343,27 @@ body {
     grid-column: 3/5
 }
 
-.price {
+.cinema__info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
     max-width: 300px;
     width: 100%;
 }
 
-.price .price-available,
-.price .price-taken,
-.price .price-selection {
+.cinema__info .cinema__info-available,
+.cinema__info .cinema__info-taken,
+.cinema__info .cinema__info-selection {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.price .price-available::before,
-.price .price-taken::before,
-.price .price-selection::before {
+.cinema__info .cinema__info-available::before,
+.cinema__info .cinema__info-taken::before,
+.cinema__info .cinema__info-selection::before {
     position: absolute;
     content: "";
     width: 7px;
@@ -341,37 +372,37 @@ body {
     border-radius: 50px;
 }
 
-.price .name {
+.cinema__info .name {
     padding-left: 20px;
     font-size: .75rem;
 }
 
-.price .price-available .name {
+.cinema__info .cinema__info-available .name {
     color: #FFFFFF;
 }
 
-.price .price-available::before {
+.cinema__info .cinema__info-available::before {
     background-color: #FFFFFF;
 }
 
-.price .price-taken .name {
-    color: #FFFFFF;
+.cinema__info .cinema__info-taken .name {
+    color: #646F6F;
 }
 
-.price .price-taken::before {
-    background-color: #FFFFFF;
+.cinema__info .cinema__info-taken::before {
+    background-color: #646F6F;
 }
 
-.price .price-selection .name {
-    color: red;
+.cinema__info .cinema__info-selection .name {
+    color: #DE1B1B;
 }
 
-.price .price-selection::before {
-    background-color: red;
+.cinema__info .cinema__info-selection::before {
+    background-color: #DE1B1B;
 }
 
 .main__btn {
-    padding: 20px 30px;
+    padding: 20px 30px 0 30px;
 }
 
 .main__btn a {
@@ -380,19 +411,24 @@ body {
     margin: 0 auto;
     text-align: center;
     font-size: 1.25rem;
-    background-color: red;
+    background-color: #de1b1b;
     border-radius: 50px;
-    border: 1px solid red;
-    color: #FFFFFF;
+    border: 1px solid #DE1B1B;
+    color: #E3E3E3;
     padding: 10px 30px;
 }
 
+.main__btn a:hover {
+    background-color: #C01515;
+    border: 1px solid #C01515;
+}
+
 @media (max-width: 1000px) {
-    .main .main__left {
+    .app .aside {
         display: none;
     }
 
-    .main .main__right {
+    .app .main {
         max-width: none;
     }
 }

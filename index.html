@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Cinema</title>
 </head>
 <body>
 <div class="wrapper">
-    <div class="main">
-        <div class="main__left">
-            <div class="main__left-inner">
-                <div class="main__left-info">
-                    <span class="main__left-clock">120min</span>
-                    <span class="main__left-heart">9.1</span>
+    <div class="app">
+        <div class="aside">
+            <div class="aside__inner">
+                <div class="aside-info">
+                    <span class="aside-clock">120min</span>
+                    <span class="aside-heart">9.1</span>
                 </div>
                 <div>
-                    <h1 class="main__left-title">The Queen's Gambit</h1>
+                    <h1 class="aside-title">The Queen's Gambit</h1>
                     <p>The story begins in Lexington, Kentucky, where a nine-year-old Beth, having lost her mother in a
                         car crash, is taken to an orphanage where she is taught chess by the building's custodian, Mr.
                         Shaibel. She develops friendships with several people, including former Kentucky State Champion
@@ -27,15 +27,19 @@
                 </div>
             </div>
         </div>
-        <div class="main__right">
-            <div class="main__right-inner">
+        <div class="main">
+            <div class="main__inner">
 
                 <div class="months">
+
                     <h2 class="months__title">January</h2>
+
                     <div class="months__slider">
-                        <div class="months__btn left">
-                            <img src="images/arrow.svg" alt="arrow">
+
+                        <div class="months__control left">
+                            <img class="months__control-img" src="images/arrow.svg" alt="arrow">
                         </div>
+
                         <ul class="months__list">
                             <li class="months__list-item">
                                 <span class="months__list-day-of-week">tue</span>
@@ -45,7 +49,7 @@
                                 <span class="months__list-day-of-week">web</span>
                                 <span class="months__list-day">4</span>
                             </li>
-                            <li class="months__list-item active">
+                            <li class="months__list-item months__list-item_active">
                                 <span class="months__list-day-of-week">thu</span>
                                 <span class="months__list-day">5</span>
                             </li>
@@ -58,10 +62,12 @@
                                 <span class="months__list-day">7</span>
                             </li>
                         </ul>
-                        <div class="months__btn right">
-                            <img src="images/arrow.svg" alt="arrow">
+
+                        <div class="months__control right">
+                            <img class="months__control-img" src="images/arrow.svg" alt="arrow">
                         </div>
                     </div>
+
                 </div>
 
                 <div class="time">
@@ -71,7 +77,7 @@
                             <span class="time__list-choice">15:00</span>
                             <span class="time__list-type">IMAX</span>
                         </li>
-                        <li class="time__list-item active">
+                        <li class="time__list-item time__list-item_active">
                             <span class="time__list-choice">15:00</span>
                             <span class="time__list-type">CINETECH+</span>
                         </li>
@@ -106,13 +112,13 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-3">
                         <label class="seat" for="seat-3"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-4">
+                        <input class="seat-checkbox" type="checkbox" id="seat-4" disabled>
                         <label class="seat" for="seat-4"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-5">
+                        <input class="seat-checkbox" type="checkbox" id="seat-5" disabled>
                         <label class="seat" for="seat-5"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-6">
+                        <input class="seat-checkbox" type="checkbox" id="seat-6" disabled>
                         <label class="seat" for="seat-6"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-7">
@@ -154,13 +160,13 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-19">
                         <label class="seat" for="seat-19"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-20">
+                        <input class="seat-checkbox" type="checkbox" id="seat-20" disabled>
                         <label class="seat seat-20" for="seat-20"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-21">
+                        <input class="seat-checkbox" type="checkbox" id="seat-21" disabled>
                         <label class="seat" for="seat-21"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-22">
+                        <input class="seat-checkbox" type="checkbox" id="seat-22" disabled>
                         <label class="seat seat-22" for="seat-22"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-23">
@@ -184,10 +190,10 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-29">
                         <label class="seat" for="seat-29"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-30">
+                        <input class="seat-checkbox" type="checkbox" id="seat-30" disabled>
                         <label class="seat" for="seat-30"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-31">
+                        <input class="seat-checkbox" type="checkbox" id="seat-31" disabled>
                         <label class="seat" for="seat-31"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-32">
@@ -253,16 +259,16 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-52">
                         <label class="seat" for="seat-52"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-53">
+                        <input class="seat-checkbox" type="checkbox" id="seat-53" disabled>
                         <label class="seat seat-53" for="seat-53"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-54">
+                        <input class="seat-checkbox" type="checkbox" id="seat-54" disabled>
                         <label class="seat" for="seat-54"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-55">
+                        <input class="seat-checkbox" type="checkbox" id="seat-55" disabled>
                         <label class="seat" for="seat-55"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-56">
+                        <input class="seat-checkbox" type="checkbox" id="seat-56" disabled>
                         <label class="seat" for="seat-56"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-57">
@@ -271,7 +277,7 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-58">
                         <label class="seat" for="seat-58"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-59">
+                        <input class="seat-checkbox" type="checkbox" id="seat-59" disabled>
                         <label class="seat" for="seat-59"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-60">
@@ -286,7 +292,7 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-63">
                         <label class="seat" for="seat-63"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-64">
+                        <input class="seat-checkbox" type="checkbox" id="seat-64" disabled>
                         <label class="seat" for="seat-64"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-65">
@@ -307,10 +313,10 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-70">
                         <label class="seat" for="seat-70"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-71">
+                        <input class="seat-checkbox" type="checkbox" id="seat-71" disabled>
                         <label class="seat" for="seat-71"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-72">
+                        <input class="seat-checkbox" type="checkbox" id="seat-72" disabled>
                         <label class="seat" for="seat-72"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-73">
@@ -346,13 +352,13 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-83">
                         <label class="seat" for="seat-83"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-84">
+                        <input class="seat-checkbox" type="checkbox" id="seat-84" disabled>
                         <label class="seat" for="seat-84"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-85">
+                        <input class="seat-checkbox" type="checkbox" id="seat-85" disabled>
                         <label class="seat" for="seat-85"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-86">
+                        <input class="seat-checkbox" type="checkbox" id="seat-86" disabled>
                         <label class="seat" for="seat-86"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-87">
@@ -370,16 +376,16 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-91">
                         <label class="seat" for="seat-91"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-92">
+                        <input class="seat-checkbox" type="checkbox" id="seat-92" disabled>
                         <label class="seat" for="seat-92"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-93">
                         <label class="seat" for="seat-93"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-94">
+                        <input class="seat-checkbox" type="checkbox" id="seat-94" disabled>
                         <label class="seat" for="seat-94"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-95">
+                        <input class="seat-checkbox" type="checkbox" id="seat-95" disabled>
                         <label class="seat seat-95" for="seat-95"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-96">
@@ -415,13 +421,13 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-106">
                         <label class="seat" for="seat-106"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-107">
+                        <input class="seat-checkbox" type="checkbox" id="seat-107" disabled>
                         <label class="seat" for="seat-107"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-108">
+                        <input class="seat-checkbox" type="checkbox" id="seat-108" disabled>
                         <label class="seat" for="seat-108"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-109">
+                        <input class="seat-checkbox" type="checkbox" id="seat-109" disabled>
                         <label class="seat seat-109" for="seat-109"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-110">
@@ -439,13 +445,13 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-114">
                         <label class="seat" for="seat-114"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-115">
+                        <input class="seat-checkbox" type="checkbox" id="seat-115" disabled>
                         <label class="seat" for="seat-115"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-116">
+                        <input class="seat-checkbox" type="checkbox" id="seat-116" disabled>
                         <label class="seat" for="seat-116"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-117">
+                        <input class="seat-checkbox" type="checkbox" id="seat-117" disabled>
                         <label class="seat seat-117" for="seat-117"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-118">
@@ -493,30 +499,29 @@
                         <input class="seat-checkbox" type="checkbox" id="seat-132">
                         <label class="seat" for="seat-132"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-133">
+                        <input class="seat-checkbox" type="checkbox" id="seat-133" disabled>
                         <label class="seat" for="seat-133"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-134">
+                        <input class="seat-checkbox" type="checkbox" id="seat-134" disabled>
                         <label class="seat" for="seat-134"></label>
 
-                        <input class="seat-checkbox" type="checkbox" id="seat-135">
+                        <input class="seat-checkbox" type="checkbox" id="seat-135" disabled>
                         <label class="seat" for="seat-135"></label>
 
                         <input class="seat-checkbox" type="checkbox" id="seat-136">
                         <label class="seat" for="seat-136"></label>
 
                     </div>
-                </div>
-
-                <div class="price">
-                    <div class="price-available">
-                        <span class="name">Available</span>
-                    </div>
-                    <div class="price-taken">
-                        <span class="name">Taken</span>
-                    </div>
-                    <div class="price-selection">
-                        <span class="name">Your Selection</span>
+                    <div class="cinema__info">
+                        <div class="cinema__info-available">
+                            <span class="name">Available</span>
+                        </div>
+                        <div class="cinema__info-taken">
+                            <span class="name">Taken</span>
+                        </div>
+                        <div class="cinema__info-selection">
+                            <span class="name">Your Selection</span>
+                        </div>
                     </div>
                 </div>
 
