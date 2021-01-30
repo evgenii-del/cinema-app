@@ -170,6 +170,8 @@ body {
     cursor: pointer;
     width: 1rem;
     height: 1rem;
+    background-color: #030303;
+    border: none;
 }
 
 .months .months__control-img {
