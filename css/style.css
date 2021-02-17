@@ -523,6 +523,8 @@ body {
 }
 
 .popup .popup__btn {
+    display: flex;
+    justify-content: space-between;
     -webkit-user-select: none;
     text-align: center;
     font-size: 1.25rem;

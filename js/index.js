@@ -13,40 +13,45 @@ const closePopup = () => {
     overlay.classList.remove("overlay_active");
 }
 
-const createBlock = values => {
-    const {months, times} = values
-    const block = document.createElement('div');
-    block.className = "js-popup__inner";
-    block.innerHTML = `
-        <div class="popup__data">
-            <img class="popup__image" src="images/banner.webp" alt="banner">
-            <div class="popup__content">
-                <h2 class="popup__title">The Queen's Gambit</h2>
-                <span class="popup__technology">CINETECH+</span>
-                <span class="popup__time">${months}</span>
-                <span class="popup__day">${times}</span>
-            </div>
-        </div>
-        <div class="popup__tickets">
-            <div class="popup__ticket">
-                <span class="popup__ticket-row">2 ряд</span>
-                <span class="popup__ticket-column">4 место</span>
-                <span class="popup__ticket-price">150 грн.</span>
-            </div>
-        </div>
-    `
-    return block;
+const createTicketsBlock = seats => {
+    const fragment = document.createDocumentFragment();
+    seats.map(seat => {
+        const [row, column] = seat.split("-");
+        const block = document.createElement("div");
+        block.className = "popup__ticket";
+        block.innerHTML = `
+            <span class="popup__ticket-row">${row} ряд</span>
+            <span class="popup__ticket-column">${column} место</span>
+            <span class="popup__ticket-price">150 грн.</span>
+        `
+        fragment.appendChild(block);
+    })
+    return fragment;
 }
 
 const changeCartData = values => {
-    const fragment = document.createDocumentFragment();
-    const popupInner = popup.querySelector(".js-popup__inner");
-    const block = createBlock(values);
+    const {months, times, seats} = values;
+    const totalPrice = 150 * seats.length;
+    const [technology, time] = times.split("-");
 
-    popupInner.innerHTML = "";
-    fragment.appendChild(block);
-    popupInner.appendChild(fragment);
+    const ticketsBlock = popup.querySelector(".js-popup__tickets");
+    const contentBlock = popup.querySelector(".js-popup__content");
+    const popupBtn = popup.querySelector(".js-popup__btn");
+    const ticketsFragment = createTicketsBlock(seats);
 
+    ticketsBlock.innerHTML = "";
+    contentBlock.innerHTML = `
+        <h2 class="popup__title">The Queen's Gambit</h2>
+        <span class="popup__technology">${technology}</span>
+        <span class="popup__time">${time}</span>
+        <span class="popup__day">${months}</span>
+    `
+    popupBtn.innerHTML = `
+        Buy
+        <span>${totalPrice} грн.</span>
+    `
+
+    ticketsBlock.appendChild(ticketsFragment);
     openPopup();
 }
 
