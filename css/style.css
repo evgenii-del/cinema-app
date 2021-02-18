@@ -508,6 +508,12 @@ body {
     max-width: 100px;
 }
 
+.popup .popup__tickets {
+    max-height: 147px;
+    margin: 15px 0;
+    overflow-y: auto;
+}
+
 .popup .popup__ticket {
     display: flex;
     justify-content: space-between;
@@ -516,6 +522,14 @@ body {
     margin-top: 15px;
     margin-bottom: 15px;
     background-color: #EEEEEE;
+}
+
+.popup .popup__ticket:first-child {
+    margin-top: 0;
+}
+
+.popup .popup__ticket:last-child {
+    margin-bottom: 0;
 }
 
 .popup .popup__ticket-row,
