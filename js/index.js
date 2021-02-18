@@ -1,5 +1,6 @@
 const closePopupBtn = document.querySelector(".js-popup__close");
 const popup = document.querySelector(".js-popup");
+const popupBtn = document.querySelector(".js-popup__btn");
 const overlay = document.querySelector(".js-overlay");
 const form = document.forms[0];
 
@@ -43,8 +44,8 @@ const changeCartData = values => {
     contentBlock.innerHTML = `
         <h2 class="popup__title">The Queen's Gambit</h2>
         <span class="popup__technology">${technology}</span>
-        <span class="popup__time">${time}</span>
         <span class="popup__day">${months}</span>
+        <span class="popup__time">${time}</span>
     `
     popupBtn.innerHTML = `
         Buy
@@ -74,11 +75,21 @@ const retrieveFormValue = event => {
             }
         }
     }
-    changeCartData(values)
+
+    if (values["seats"]) {
+        changeCartData(values);
+    } else {
+        alert("Choose seats");
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", retrieveFormValue);
     closePopupBtn.addEventListener("click", closePopup);
     overlay.addEventListener("click", closePopup);
+    popupBtn.addEventListener("click", () => {
+        closePopup();
+        form.reset();
+        alert("Purchase was successful");
+    });
 })

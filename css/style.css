@@ -17,7 +17,7 @@
     opacity: 0;
     z-index: 5;
     pointer-events: none;
-    background-color: rgba(0, 0, 0, .75);
+    background-color: rgba(30, 30, 30, .75);
 }
 
 .overlay.overlay_active {
@@ -464,8 +464,6 @@ body {
     margin: 0 auto;
     flex-direction: column;
     justify-content: space-between;
-    /*max-width: 720px;*/
-    /*width: 100%;*/
     background: #030303;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -502,18 +500,22 @@ body {
     padding-bottom: 15px;
 }
 
+.popup__title {
+    text-align: center;
+}
+
 .popup .popup__image {
     max-width: 100px;
 }
 
 .popup .popup__ticket {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
     margin-top: 15px;
     margin-bottom: 15px;
-}
-
-.popup .popup__ticket {
     background-color: #EEEEEE;
-    padding: 10px 30px;
 }
 
 .popup .popup__ticket-row,
@@ -618,5 +620,10 @@ body {
     .aside .aside__inner,
     .main .main__inner {
         padding: 25px 15px;
+    }
+
+    .popup {
+        max-width: 300px;
+        width: 100%;
     }
 }
